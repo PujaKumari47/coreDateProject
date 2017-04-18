@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var searchFirstNameField: UITextField!
     @IBOutlet weak var searchLabel: UILabel!
-    @IBOutlet weak var secondSearchNameField: UITextField!
+    
     
     
     
@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext
         
-        let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
+        let newUser = NSEntityDescription.insertNewObject(forEntityName:"User", into: context)
         
         newUser.setValue(self.firstNameField.text, forKey: "firstName")
         newUser.setValue(self.lastNameField.text, forKey: "lastName")
@@ -45,58 +45,57 @@ class ViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func showDetails(_ sender: UIButton) {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-        let secondController = mainStoryBoard.instantiateViewController(withIdentifier: "secondView") as? SecondTableViewController
-        self.present(secondController!, animated: true, completion: nil)
+        
     }
     
-//    @IBAction func deleteUser(_ sender: Any) {
-//        
-//        let alertController = UIAlertController(title: "Delete User Details", message: "Are u sure you want to continue", preferredStyle: .alert)
-//        
-//        let okAction = UIAlertAction(title: "Delete", style: .default, handler: { action in
-//            
-//            let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-//            let context:NSManagedObjectContext = appDel.managedObjectContext
-//            let request = NSFetchRequest<NSFetchRequestResult> (entityName: "User")
-//            print(User())
-//            
-//            let searchString:String = self.searchFirstNameField.text!
-//            //let secondSearchString:String = self.searchFirstNameField.text!
-//            
-//            //   let texts = searchString.components(separatedBy: " ")
-//            // let firstText = texts.first!
-//            // let lastText = texts.last!
-//            
-//            request.predicate = NSPredicate(format:"firstName == '\(searchString)'")
-//            
-//            
-//            
-//            
-//            print( (request), "Request")
-//            if let result = try? context.fetch(request) {
-//                
-//                for object in result {
-//                    context.delete(object as! NSManagedObject)
-//                }
-//            }
-//            
-//            do{
-//                
-//                
-//                try context.save()
-//                
-//                
-//            } catch{
-//                print("Error in fetching the data")
-//            }
-//            
-//        })
-//        alertController.addAction(okAction)
-//        
-//        
-//        self.present(alertController, animated: true, completion: nil)
-//    }
+    @IBAction func deleteUser(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Delete User Details", message: "Are u sure you want to continue", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Delete", style: .default, handler: { action in
+            
+            let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context:NSManagedObjectContext = appDel.managedObjectContext
+            let request = NSFetchRequest<NSFetchRequestResult> (entityName: "User")
+            print(User())
+            
+            let searchString:String = self.searchFirstNameField.text!
+            //let secondSearchString:String = self.searchFirstNameField.text!
+            
+            //   let texts = searchString.components(separatedBy: " ")
+            // let firstText = texts.first!
+            // let lastText = texts.last!
+            
+            request.predicate = NSPredicate(format:"firstName == '\(searchString)'")
+            
+            
+            
+            
+            print( (request), "Request")
+            if let result = try? context.fetch(request) {
+                
+                for object in result {
+                    context.delete(object as! NSManagedObject)
+                }
+            }
+            
+            do{
+                
+                
+                try context.save()
+                
+                
+            } catch{
+                print("Error in fetching the data")
+            }
+            
+        })
+        alertController.addAction(okAction)
+        
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         firstNameField.resignFirstResponder()
         return true
@@ -114,9 +113,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         
         let searchString:String = self.searchFirstNameField.text!
-        let secondSearchString:String = self.secondSearchNameField.text!
         request.predicate = NSPredicate(format: "firstName == '\(searchString)'")
-        request.predicate = NSPredicate(format: "lastName == '\(secondSearchString)'")
+        
         do{
             let results = try context.fetch(request)
             if results.count > 0{
