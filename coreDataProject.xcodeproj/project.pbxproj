@@ -15,6 +15,8 @@
 		E8175D021E938152009C6D95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8175D001E938152009C6D95 /* LaunchScreen.storyboard */; };
 		E8175D0D1E938153009C6D95 /* coreDataProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8175D0C1E938153009C6D95 /* coreDataProjectTests.swift */; };
 		E8175D181E938153009C6D95 /* coreDataProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8175D171E938153009C6D95 /* coreDataProjectUITests.swift */; };
+		E8AF2CA71EA64A80009639EB /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AF2CA61EA64A80009639EB /* SecondTableViewController.swift */; };
+		E8AF2CA91EA65427009639EB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AF2CA81EA65427009639EB /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		E8175D131E938153009C6D95 /* coreDataProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coreDataProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8175D171E938153009C6D95 /* coreDataProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataProjectUITests.swift; sourceTree = "<group>"; };
 		E8175D191E938153009C6D95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8AF2CA61EA64A80009639EB /* SecondTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
+		E8AF2CA81EA65427009639EB /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		E8175CE81E938152009C6D95 = {
 			isa = PBXGroup;
 			children = (
+				E8AF2CA81EA65427009639EB /* TableViewCell.swift */,
+				E8AF2CA61EA64A80009639EB /* SecondTableViewController.swift */,
 				E8175CF31E938152009C6D95 /* coreDataProject */,
 				E8175D0B1E938153009C6D95 /* coreDataProjectTests */,
 				E8175D161E938153009C6D95 /* coreDataProjectUITests */,
@@ -262,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8AF2CA91EA65427009639EB /* TableViewCell.swift in Sources */,
 				E8175CF71E938152009C6D95 /* ViewController.swift in Sources */,
+				E8AF2CA71EA64A80009639EB /* SecondTableViewController.swift in Sources */,
 				E8175CF51E938152009C6D95 /* AppDelegate.swift in Sources */,
 				E8175CFD1E938152009C6D95 /* coreDataProject.xcdatamodeld in Sources */,
 			);
@@ -507,6 +515,7 @@
 				E8175D1E1E938153009C6D95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8175D1F1E938153009C6D95 /* Build configuration list for PBXNativeTarget "coreDataProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +524,7 @@
 				E8175D211E938153009C6D95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8175D221E938153009C6D95 /* Build configuration list for PBXNativeTarget "coreDataProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +533,7 @@
 				E8175D241E938153009C6D95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
